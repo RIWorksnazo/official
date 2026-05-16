@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>RI:Works Official</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:
+    "Hiragino Sans",
+    "Noto Sans JP",
+    sans-serif;
+
+  background:#f7fbfd;
+  color:#18354a;
+  overflow-x:hidden;
+  line-height:1.8;
+}
+
+/* =========================
+   背景
+========================= */
+
+.background{
+  position:fixed;
+  inset:0;
+  z-index:-10;
+  overflow:hidden;
+}
+
+.background::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255,255,255,0.92),
+      transparent 70%
+    );
+}
+
+/* 背景ロゴ */
+
+.bg-logo{
+  position:absolute;
+
+  width:1100px;
+
+  right:-260px;
+  top:-120px;
+
+  opacity:0.14;
+
+  animation:
+    logoFloat1 14s ease-in-out infinite;
+
+  pointer-events:none;
+}
+
+
+@keyframes logoFloat1{
+
+  0%{
+    transform:
+      translateY(0px)
+      rotate(0deg);
+  }
+
+  50%{
+    transform:
+      translateY(-26px)
+      rotate(3deg);
+  }
+
+  100%{
+    transform:
+      translateY(0px)
+      rotate(0deg);
+  }
+}
+
+/* =========================
+   ナビ
+========================= */
+
+.navbar{
+
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:82px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 8%;
+
+  background:
+    rgba(255,255,255,0.74);
+
+  backdrop-filter:
+    blur(18px);
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.7);
+
+  z-index:1000;
+}
+
+.logo-icon{
+  width:44px;
+}
+
+.logo-text{
+  width:150px;
+}
+
+.menu{
+  display:flex;
+  gap:34px;
+}
+
+.menu a{
+
+  position:relative;
+
+  text-decoration:none;
+
+  color:#506678;
+
+  font-size:14px;
+  font-weight:700;
+
+  letter-spacing:0.08em;
+
+  transition:0.25s;
+}
+
+.menu a::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  bottom:-8px;
+
+  width:0%;
+  height:2px;
+
+  background:#2daec6;
+
+  transition:0.25s;
+}
+
+.menu a:hover{
+  color:#2daec6;
+}
+
+.menu a:hover::after{
+  width:100%;
+}
+
+/* =========================
+   HERO
+========================= */
+
+header{
+
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+
+  padding:
+    150px 8%
+    100px;
+}
+
+.hero{
+  max-width:760px;
+}
+
+.hero h1{
+
+  font-size:
+    clamp(64px,9vw,130px);
+
+  line-height:0.95;
+
+  margin-bottom:34px;
+
+  font-weight:900;
+
+  color:#18354a;
+}
+
+.hero p{
+
+  font-size:20px;
+
+  color:#5f7485;
+
+  margin-bottom:46px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.buttons{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.btn{
+
+  border:none;
+  cursor:pointer;
+
+  padding:
+    17px 34px;
+
+  border-radius:22px;
+
+  font-size:15px;
+  font-weight:700;
+
+  transition:0.3s;
+}
+
+.btn-main{
+
+  background:
+    linear-gradient(
+      135deg,
+      #eba12b,
+      #ffc86e
+    );
+
+  color:white;
+
+  box-shadow:
+    0 14px 34px
+    rgba(255,181,66,0.28);
+}
+
+.btn-main:hover{
+
+  transform:
+    translateY(-5px)
+    scale(1.03);
+}
+
+.btn-sub{
+
+  background:
+    linear-gradient(
+      135deg,
+      #47c9df,
+      #77e4ff
+    );
+
+  color:white;
+
+  box-shadow:
+    0 14px 34px
+    rgba(71,201,223,0.28);
+}
+
+.btn-sub:hover{
+
+  transform:
+    translateY(-5px)
+    scale(1.03);
+}
+
+.contact-buttons{
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:38px;
+
+  flex-wrap:wrap;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+  padding:120px 8%;
+}
+
+.section-title{
+  margin-bottom:60px;
+}
+
+.section-title h2{
+
+  font-size:54px;
+  line-height:1.1;
+
+  color:#18354a;
+}
+
+/* =========================
+   ガラスカード
+========================= */
+
+.news-item,
+.member-card,
+.content-card,
+.contact-box,
+.about-box,
+.pickup-card{
+
+  background:
+    rgba(255,255,255,0.62);
+
+  backdrop-filter:
+    blur(24px);
+
+  border:
+    1px solid rgba(255,255,255,0.7);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.05);
+}
+
+/* =========================
+   PICKUP
+========================= */
+
+.pickup-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+  gap:28px;
+}
+
+.pickup-card{
+
+  border-radius:34px;
+
+  overflow:hidden;
+
+  transition:0.35s;
+}
+
+.pickup-card:hover{
+
+  transform:
+    translateY(-10px)
+    scale(1.015);
+}
+
+.pickup-image{
+
+  height:240px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(84,214,230,0.25),
+      rgba(240,163,58,0.2)
+    );
+}
+
+.pickup-body{
+  padding:32px;
+}
+
+.pickup-body h3{
+
+  font-size:32px;
+
+  margin-bottom:16px;
+}
+
+.pickup-body p{
+  color:#607688;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-box{
+
+  padding:50px;
+
+  border-radius:40px;
+}
+
+.about-box p{
+
+  font-size:18px;
+
+  color:#607688;
+
+  margin-bottom:24px;
+}
+
+/* =========================
+   NEWS
+========================= */
+
+.news-list{
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+
+.news-item{
+
+  padding:34px;
+
+  border-radius:30px;
+
+  transition:0.3s;
+}
+
+.news-item:hover{
+
+  transform:
+    translateY(-8px);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.08);
+}
+
+.news-date{
+
+  color:#2daec6;
+
+  font-size:14px;
+  font-weight:700;
+
+  margin-bottom:12px;
+}
+
+.news-item h3{
+
+  font-size:28px;
+
+  margin-bottom:12px;
+}
+
+.news-item p{
+  color:#607688;
+}
+
+/* =========================
+   CONTENTS
+========================= */
+
+.content-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(290px,1fr));
+
+  gap:28px;
+}
+
+.content-card{
+
+  overflow:hidden;
+
+  border-radius:34px;
+
+  transition:0.35s;
+}
+
+.content-card:hover{
+
+  transform:
+    translateY(-10px)
+    scale(1.015);
+}
+
+.content-image{
+
+  height:240px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(84,214,230,0.25),
+      rgba(240,163,58,0.2)
+    );
+}
+
+.content-body{
+  padding:32px;
+}
+
+.content-card h3{
+
+  font-size:32px;
+
+  margin-bottom:14px;
+}
+
+.content-card p{
+  color:#607688;
+}
+
+/* =========================
+   CREATOR
+========================= */
+
+.member-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+  gap:26px;
+}
+
+.member-card{
+
+  padding:38px;
+
+  border-radius:34px;
+
+  text-align:center;
+
+  transition:0.35s;
+}
+
+.member-card:hover{
+
+  transform:
+    translateY(-10px)
+    scale(1.02);
+}
+
+.member-icon{
+
+  width:120px;
+  height:120px;
+
+  margin:
+    0 auto 26px;
+
+  border-radius:50%;
+
+  object-fit:cover;
+
+  border:
+    4px solid rgba(255,255,255,0.8);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+}
+
+.member-card h3{
+
+  font-size:30px;
+
+  margin-bottom:8px;
+}
+
+.member-role{
+
+  color:#ea9920;
+
+  font-weight:700;
+
+  margin-bottom:18px;
+}
+
+.member-card p{
+  color:#607688;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-box{
+
+  border-radius:40px;
+
+  padding:70px;
+
+  text-align:center;
+}
+
+.contact-box p{
+
+  max-width:700px;
+
+  margin:
+    0 auto 40px;
+
+  font-size:18px;
+
+  color:#607688;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+  padding:50px;
+
+  text-align:center;
+
+  color:#8094a3;
+
+  font-size:14px;
+}
+
+/* =========================
+   FADE
+========================= */
+
+.fade-up{
+
+  opacity:0;
+
+  transform:
+    translateY(40px);
+
+  animation:
+    fadeUp 1s forwards;
+}
+
+.delay1{
+  animation-delay:0.15s;
+}
+
+.delay2{
+  animation-delay:0.3s;
+}
+
+.delay3{
+  animation-delay:0.45s;
+}
+
+@keyframes fadeUp{
+
+  to{
+
+    opacity:1;
+
+    transform:
+      translateY(0px);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+  .navbar{
+    padding:0 6%;
+  }
+
+  .menu{
+    gap:18px;
+  }
+
+  .menu a{
+    font-size:12px;
+  }
+
+  .hero h1{
+    font-size:72px;
+  }
+
+  .hero p{
+    font-size:18px;
+  }
+
+  .section-title h2{
+    font-size:42px;
+  }
+
+  section{
+    padding:100px 7%;
+  }
+
+  .contact-box{
+    padding:42px 28px;
+  }
+
+  .about-box{
+    padding:36px;
+  }
+
+  .bg-logo{
+    width:700px;
+  }
+
+  .bg-logo2{
+    width:520px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- 背景 -->
+
+<div class="background">
+
+  <img src="risu.png" class="bg-logo">
+
+</div>
+
+<!-- ナビ -->
+
+<nav class="navbar">
+
+  <div class="logo">
+
+    <img src="risu.png" class="logo-icon">
+    <img src="rogo.png" class="logo-text">
+
+  </div>
+
+  <div class="menu">
+    <a href="#top">TOP</a>
+    <a href="#pickup">PICKUP</a>
+    <a href="#about">ABOUT</a>
+    <a href="#news">NEWS</a>
+    <a href="#contents">CONTENTS</a>
+    <a href="#creator">CREATOR</a>
+    <a href="#contact">CONTACT</a>
+  </div>
+
+</nav>
+
+<!-- TOP -->
+
+<header id="top">
+
+  <div class="hero">
+
+    <h1 class="fade-up delay1">
+      キャッチ<br>
+      コピー
+    </h1>
+
+    <p class="fade-up delay2">
+
+      RI:Worksは、全国に制作メンバーがいる
+      学生謎解き団体です。<br>
+
+      誰でも楽しめる、
+      他にはない脱出ゲームを開催しています。
+
+    </p>
+
+    <div class="buttons fade-up delay3">
+
+      <button class="btn btn-main">
+        最新コンテンツ
+      </button>
+
+      <button class="btn btn-sub">
+        お問い合わせ
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- PICKUP -->
+
+<section id="pickup">
+
+  <div class="section-title">
+    <h2>PICK UP</h2>
+  </div>
+
+  <div class="pickup-grid">
+
+    <div class="pickup-card">
+
+      <div class="pickup-image"></div>
+
+      <div class="pickup-body">
+
+        <h3>
+          公式サイトを公開しました！
+        </h3>
+
+        <p>
+          RI:Worksの公式サイトを公開しました。
+          今後の最新情報などを掲載予定です。
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="pickup-card">
+
+      <div class="pickup-image"></div>
+
+      <div class="pickup-body">
+
+        <h3>
+          
+        </h3>
+
+        <p>
+          
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <div class="section-title">
+    <h2>ABOUT</h2>
+  </div>
+
+  <div class="about-box">
+
+    <p>
+    RI:Worksとは？<br>
+    </p>
+
+    <p>
+    読み方:リワークス<br>
+    </p>
+
+    <p>
+    RI:Worksは、全国に制作メンバーがいる、学生謎解き団体です。<br>
+    リアル脱出ゲーム甲子園ⓒに応募するために団体を発足しました。<br>
+    その後の謎キャン2025にて、初めて制作した公演『鏡の国の鏡界戦』を開催しました。<br>
+    現在も、東京や大阪、名古屋など、様々な場所で脱出ゲームを開催しています。<br>
+    </p>
+
+  </div>
+
+</section>
+
+<!-- NEWS -->
+
+<section id="news">
+
+  <div class="section-title">
+    <h2>NEWS</h2>
+  </div>
+
+  <div class="news-list">
+
+    <div class="news-item">
+
+      <div class="news-date">
+        2026.05.16
+      </div>
+
+      <h3>
+        公式サイトを公開しました！
+      </h3>
+
+      <p>
+        RI:Worksの公式サイトを公開しました。
+        今後の最新情報などを掲載予定です。
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+<!-- CONTENTS -->
+
+<section id="contents">
+
+  <div class="section-title">
+    <h2>CONTENTS</h2>
+  </div>
+
+  <div class="content-grid">
+
+    <div class="content-card">
+
+      <div class="content-image"></div>
+
+      <div class="content-body">
+
+        <h3>
+          鏡の国の鏡界戦
+        </h3>
+
+        <p>
+          公演形式:ルーム型
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="content-card">
+
+      <div class="content-image"></div>
+
+      <div class="content-body">
+
+        <h3>
+          おばけにいたずらされた謎解き公演からの脱出
+        </h3>
+
+        <p>
+          公演形式:ルーム型
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="content-card">
+
+      <div class="content-image"></div>
+
+      <div class="content-body">
+
+        <h3>
+          ブラックサンタからの退職
+        </h3>
+
+        <p>
+          公演形式:ルーム型
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CREATOR -->
+
+<section id="creator">
+
+  <div class="section-title">
+    <h2>CREATOR</h2>
+  </div>
+
+  <div class="member-grid">
+
+    <div class="member-card">
+
+      <img src="yahamasa.png" class="member-icon">
+
+      <h3>yahamasa</h3>
+
+      <div class="member-role">
+        @dassyutunazo4
+      </div>
+
+      <p>
+        yahamasaです！<br>
+        RI:Worksの代表してます！色々作ります！
+      </p>
+
+    </div>
+
+    <div class="member-card">
+
+      <div class="member-icon"></div>
+
+      <h3>10時</h3>
+
+      <div class="member-role">
+        @10ji_nazotoki
+      </div>
+
+      <p>
+        亀が好きです。
+      </p>
+
+    </div>
+
+    <div class="member-card">
+
+      <div class="member-icon"></div>
+
+      <h3>ますずし</h3>
+
+      <div class="member-role">
+        @Mathzusi_nazo
+      </div>
+
+      <p>
+        人の形をした蛙です。<br>
+        塩ようかんが主食。
+      </p>
+
+    </div>
+
+    <div class="member-card">
+
+      <div class="member-icon"></div>
+
+      <h3>rriA</h3>
+
+      <div class="member-role">
+        @rriA_bkr
+      </div>
+
+      <p>
+        リリアって読みます。<br>
+        米在住の学生です。<br>
+        朝ごはんはご飯派です。
+      </p>
+
+    </div>
+
+    <div class="member-card">
+
+      <div class="member-icon"></div>
+
+      <h3>どんぶり</h3>
+
+      <div class="member-role">
+        @dooooon8228
+      </div>
+
+      <p>
+        ナナメに生きる人。
+      </p>
+
+    </div>
+
+    <div class="member-card">
+
+      <div class="member-icon"></div>
+
+      <h3>Turbot</h3>
+
+      <div class="member-role">
+        @turbot_kare
+      </div>
+
+      <p>
+        Turbotと申します。
+        小謎を作ります。よろしくお願いします。
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+  <div class="contact-box">
+
+    <div class="section-title">
+
+      <h2>
+        CONTACT
+      </h2>
+
+    </div>
+
+    <p>
+      イベント制作依頼、
+      コラボレーションなど、
+      お気軽にお問い合わせください。
+    </p>
+
+    <div class="contact-buttons">
+
+    <button class="btn btn-main">
+      公式X
+    </button>
+
+    <button class="btn btn-main">
+      メール
+    </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+  ⓒ 2026 RI:Works
+</footer>
+
+</body>
+</html>
