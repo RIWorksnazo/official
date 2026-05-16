@@ -207,7 +207,7 @@ header{
 .hero h1{
 
   font-size:
-    clamp(64px,9vw,130px);
+    clamp(36px,5vw,72px);
 
   line-height:0.95;
 
@@ -692,50 +692,111 @@ footer{
 
 @media(max-width:900px){
 
+  /* ナビ全体 */
+
   .navbar{
-    padding:0 6%;
+
+    height:auto;
+
+    padding:14px 5%;
+
+    flex-direction:column;
+
+    gap:12px;
   }
 
+  /* ロゴ */
+
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+
+  .logo-icon{
+    width:34px;
+  }
+
+  .logo-text{
+    width:110px;
+  }
+
+  /* メニュー */
+
   .menu{
-    gap:18px;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:14px;
   }
 
   .menu a{
-    font-size:12px;
+
+    font-size:11px;
+
+    letter-spacing:0.04em;
   }
 
-  .hero h1{
-    font-size:72px;
+  /* セクション */
+
+  section{
+    padding:90px 6%;
   }
 
-  .hero p{
-    font-size:18px;
+  /* タイトル */
+
+  .section-title{
+    margin-bottom:34px;
   }
 
   .section-title h2{
-    font-size:42px;
+    font-size:34px;
   }
 
-  section{
-    padding:100px 7%;
-  }
-
-  .contact-box{
-    padding:42px 28px;
-  }
+  /* ABOUT */
 
   .about-box{
-    padding:36px;
+
+    padding:28px;
+
+    border-radius:26px;
   }
+
+  .about-box p{
+
+    font-size:15px;
+
+    line-height:1.9;
+  }
+
+  /* 背景ロゴ */
 
   .bg-logo{
-    width:700px;
+
+    width:480px;
+
+    right:-120px;
+    top:-60px;
+
+    opacity:0.08;
   }
 
-  .bg-logo2{
-    width:520px;
+  /* フッター */
+
+  footer{
+
+    padding:30px;
+
+    font-size:12px;
   }
 }
+
 
 </style>
 </head>
@@ -780,8 +841,8 @@ footer{
   <div class="hero">
 
     <h1 class="fade-up delay1">
-      キャッチ<br>
-      コピー
+      仮のサイトです！公開は後日！<br>
+      拡散はしないでね！
     </h1>
 
     <p class="fade-up delay2">
@@ -846,11 +907,11 @@ footer{
       <div class="pickup-body">
 
         <h3>
-          
+          Coming Soon...
         </h3>
 
         <p>
-          
+          最新情報を準備中です。
         </p>
 
       </div>
@@ -1019,7 +1080,7 @@ footer{
 
     <div class="member-card">
 
-      <div class="member-icon"></div>
+      <img src="10時.png" class="member-icon">
 
       <h3>10時</h3>
 
@@ -1035,7 +1096,7 @@ footer{
 
     <div class="member-card">
 
-      <div class="member-icon"></div>
+      <img src="ますずし.jpeg" class="member-icon">
 
       <h3>ますずし</h3>
 
@@ -1052,7 +1113,7 @@ footer{
 
     <div class="member-card">
 
-      <div class="member-icon"></div>
+      <img src="rriA.jpeg" class="member-icon">
 
       <h3>rriA</h3>
 
