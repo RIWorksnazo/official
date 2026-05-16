@@ -58,8 +58,6 @@ body{
     );
 }
 
-/* 背景ロゴ */
-
 .bg-logo{
   position:absolute;
 
@@ -75,7 +73,6 @@ body{
 
   pointer-events:none;
 }
-
 
 @keyframes logoFloat1{
 
@@ -130,6 +127,12 @@ body{
   z-index:1000;
 }
 
+.logo{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
 .logo-icon{
   width:44px;
 }
@@ -140,6 +143,7 @@ body{
 
 .menu{
   display:flex;
+  align-items:center;
   gap:34px;
 }
 
@@ -209,7 +213,7 @@ header{
   font-size:
     clamp(36px,5vw,72px);
 
-  line-height:0.95;
+  line-height:1.1;
 
   margin-bottom:34px;
 
@@ -251,6 +255,10 @@ header{
   font-weight:700;
 
   transition:0.3s;
+
+  text-decoration:none;
+
+  display:inline-block;
 }
 
 .btn-main{
@@ -315,7 +323,8 @@ header{
 ========================= */
 
 section{
-  padding:120px 8%;
+  padding:140px 8% 120px;
+  min-height:100vh;
 }
 
 .section-title{
@@ -366,6 +375,8 @@ section{
     repeat(auto-fit,minmax(320px,1fr));
 
   gap:28px;
+
+  margin-top:60px;
 }
 
 .pickup-card{
@@ -595,12 +606,25 @@ section{
   margin-bottom:8px;
 }
 
-.member-role{
+.member-role a{
 
   color:#ea9920;
 
   font-weight:700;
 
+  text-decoration:none;
+
+  transition:0.2s;
+}
+
+.member-role a:hover{
+  opacity:0.7;
+}
+
+.member-sub{
+  font-size:13px;
+  color:#8094a3;
+  margin-top:4px;
   margin-bottom:18px;
 }
 
@@ -685,6 +709,114 @@ footer{
       translateY(0px);
   }
 }
+/* =========================
+   POPUP BUTTON
+========================= */
+
+.popup-open{
+
+  color:#f0b53d;
+
+  font-size:20px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:0.3s;
+
+  line-height:1;
+}
+
+.popup-open:hover{
+
+  transform:scale(1.2);
+}
+
+/* =========================
+   POPUP
+========================= */
+
+.popup-overlay{
+
+  position:fixed;
+
+  inset:0;
+
+  background:rgba(0,0,0,0.5);
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  opacity:0;
+
+  pointer-events:none;
+
+  transition:0.3s;
+
+  z-index:5000;
+}
+
+.popup-overlay.show{
+
+  opacity:1;
+
+  pointer-events:auto;
+}
+
+.popup-box{
+
+  position:relative;
+
+  width:min(92%,720px);
+
+  border-radius:28px;
+
+  overflow:hidden;
+
+  background:white;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.25);
+}
+
+.popup-image{
+
+  width:100%;
+
+  display:block;
+}
+
+.popup-close{
+
+  position:absolute;
+
+  top:14px;
+  right:14px;
+
+  width:42px;
+  height:42px;
+
+  border:none;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,0.92);
+
+  font-size:28px;
+
+  cursor:pointer;
+
+  transition:0.2s;
+}
+
+.popup-close:hover{
+
+  transform:scale(1.1);
+}
 
 /* =========================
    RESPONSIVE
@@ -692,42 +824,20 @@ footer{
 
 @media(max-width:900px){
 
-  /* ナビ全体 */
-
   .navbar{
 
     height:auto;
 
-    padding:14px 5%;
+    padding:16px 5%;
 
     flex-direction:column;
 
-    gap:12px;
+    gap:14px;
   }
-
-  /* ロゴ */
-
-  .logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-  }
-
-  .logo-icon{
-    width:34px;
-  }
-
-  .logo-text{
-    width:110px;
-  }
-
-  /* メニュー */
 
   .menu{
 
     width:100%;
-
-    display:flex;
 
     justify-content:center;
 
@@ -739,65 +849,56 @@ footer{
   .menu a{
 
     font-size:11px;
-
-    letter-spacing:0.04em;
   }
 
-  /* セクション */
+  .hero h1{
 
-  section{
-    padding:90px 6%;
+    font-size:38px;
+
+    line-height:1.2;
   }
 
-  /* タイトル */
+  .hero p{
 
-  .section-title{
-    margin-bottom:34px;
+    font-size:16px;
+  }
+
+  .pickup-grid,
+  .content-grid,
+  .member-grid{
+
+    grid-template-columns:1fr;
+  }
+
+  .pickup-body h3,
+  .content-card h3,
+  .news-item h3{
+
+    font-size:24px;
+  }
+
+  .member-card h3{
+
+    font-size:24px;
   }
 
   .section-title h2{
-    font-size:34px;
+
+    font-size:36px;
   }
-
-  /* ABOUT */
-
-  .about-box{
-
-    padding:28px;
-
-    border-radius:26px;
-  }
-
-  .about-box p{
-
-    font-size:15px;
-
-    line-height:1.9;
-  }
-
-  /* 背景ロゴ */
 
   .bg-logo{
 
-  width:480px;
+    width:480px;
 
-  right:-120px;
+    right:-120px;
 
-  top:80px;
+    top:60px;
 
-  opacity:0.08;
+    opacity:0.08;
   }
-
-  /* フッター */
-
-  footer{
-
-    padding:30px;
-
-    font-size:12px;
-  }
+  
 }
-
 
 </style>
 </head>
@@ -807,9 +908,7 @@ footer{
 <!-- 背景 -->
 
 <div class="background">
-
   <img src="risu.png" class="bg-logo">
-
 </div>
 
 <!-- ナビ -->
@@ -817,20 +916,20 @@ footer{
 <nav class="navbar">
 
   <div class="logo">
-
     <img src="risu.png" class="logo-icon">
     <img src="rogo.png" class="logo-text">
-
   </div>
 
   <div class="menu">
     <a href="#top">TOP</a>
-    <a href="#pickup">PICKUP</a>
     <a href="#about">ABOUT</a>
     <a href="#news">NEWS</a>
     <a href="#contents">CONTENTS</a>
     <a href="#creator">CREATOR</a>
     <a href="#contact">CONTACT</a>
+    <div class="popup-open" onclick="openPopup()">
+    ★
+  </div>
   </div>
 
 </nav>
@@ -842,8 +941,7 @@ footer{
   <div class="hero">
 
     <h1 class="fade-up delay1">
-      仮のサイトです！<br>
-      公開は後日！<br>
+      仮のサイトです！公開は後日！<br>
       拡散はしないでね！
     </h1>
 
@@ -859,70 +957,62 @@ footer{
 
     <div class="buttons fade-up delay3">
 
-      <button class="btn btn-main">
+      <a href="#contents" class="btn btn-main">
         最新コンテンツ
-      </button>
+      </a>
 
-      <button class="btn btn-sub">
+      <a href="#contact" class="btn btn-sub">
         お問い合わせ
-      </button>
+      </a>
+
+    </div>
+
+    <!-- TOP内にPICKUPを移動 -->
+
+    <div class="pickup-grid">
+
+      <div class="pickup-card">
+
+        <div class="pickup-image"></div>
+
+        <div class="pickup-body">
+
+          <h3>
+            公式サイトを公開しました！
+          </h3>
+
+          <p>
+            RI:Worksの公式サイトを公開しました。
+            今後の最新情報などを掲載予定です。
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="pickup-card">
+
+        <div class="pickup-image"></div>
+
+        <div class="pickup-body">
+
+          <h3>
+            Coming Soon...
+          </h3>
+
+          <p>
+            新作情報を準備中です。
+          </p>
+
+        </div>
+
+      </div>
 
     </div>
 
   </div>
 
 </header>
-
-<!-- PICKUP -->
-
-<section id="pickup">
-
-  <div class="section-title">
-    <h2>PICK UP</h2>
-  </div>
-
-  <div class="pickup-grid">
-
-    <div class="pickup-card">
-
-      <div class="pickup-image"></div>
-
-      <div class="pickup-body">
-
-        <h3>
-          公式サイトを公開しました！
-        </h3>
-
-        <p>
-          RI:Worksの公式サイトを公開しました。
-          今後の最新情報などを掲載予定です。
-        </p>
-
-      </div>
-
-    </div>
-
-    <div class="pickup-card">
-
-      <div class="pickup-image"></div>
-
-      <div class="pickup-body">
-
-        <h3>
-          Coming Soon...
-        </h3>
-
-        <p>
-          最新情報を準備中です。
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
 
 <!-- ABOUT -->
 
@@ -935,18 +1025,18 @@ footer{
   <div class="about-box">
 
     <p>
-    RI:Worksとは？<br>
+      RI:Worksとは？
     </p>
 
     <p>
-    読み方:リワークス<br>
+      読み方:リワークス
     </p>
 
     <p>
-    RI:Worksは、全国に制作メンバーがいる、学生謎解き団体です。<br>
-    リアル脱出ゲーム甲子園ⓒに応募するために団体を発足しました。<br>
-    その後の謎キャン2025にて、初めて制作した公演『鏡の国の鏡界戦』を開催しました。<br>
-    現在も、東京や大阪、名古屋など、様々な場所で脱出ゲームを開催しています。<br>
+      RI:Worksは、全国に制作メンバーがいる、学生謎解き団体です。<br>
+      リアル脱出ゲーム甲子園ⓒに応募するために団体を発足しました。<br>
+      その後の謎キャン2025にて、初めて制作した公演『鏡の国の鏡界戦』を開催しました。<br>
+      現在も、東京や大阪、名古屋など、様々な場所で脱出ゲームを開催しています。
     </p>
 
   </div>
@@ -979,7 +1069,6 @@ footer{
       </p>
 
     </div>
-
 
   </div>
 
@@ -1070,7 +1159,13 @@ footer{
       <h3>yahamasa</h3>
 
       <div class="member-role">
-        @dassyutunazo4
+        <a href="https://x.com/dassyutunazo4" target="_blank">
+          @dassyutunazo4
+        </a>
+      </div>
+
+      <div class="member-sub">
+        Director / Puzzle Creator
       </div>
 
       <p>
@@ -1087,79 +1182,17 @@ footer{
       <h3>10時</h3>
 
       <div class="member-role">
-        @10ji_nazotoki
+        <a href="https://x.com/10ji_nazotoki" target="_blank">
+          @10ji_nazotoki
+        </a>
+      </div>
+
+      <div class="member-sub">
+        Puzzle Creator
       </div>
 
       <p>
         亀が好きです。
-      </p>
-
-    </div>
-
-    <div class="member-card">
-
-      <img src="ますずし.jpeg" class="member-icon">
-
-      <h3>ますずし</h3>
-
-      <div class="member-role">
-        @Mathzusi_nazo
-      </div>
-
-      <p>
-        人の形をした蛙です。<br>
-        塩ようかんが主食。
-      </p>
-
-    </div>
-
-    <div class="member-card">
-
-      <img src="rriA.jpeg" class="member-icon">
-
-      <h3>rriA</h3>
-
-      <div class="member-role">
-        @rriA_bkr
-      </div>
-
-      <p>
-        リリアって読みます。<br>
-        米在住の学生です。<br>
-        朝ごはんはご飯派です。
-      </p>
-
-    </div>
-
-    <div class="member-card">
-
-      <div class="member-icon"></div>
-
-      <h3>どんぶり</h3>
-
-      <div class="member-role">
-        @dooooon8228
-      </div>
-
-      <p>
-        ナナメに生きる人。
-      </p>
-
-    </div>
-
-    <div class="member-card">
-
-      <div class="member-icon"></div>
-
-      <h3>Turbot</h3>
-
-      <div class="member-role">
-        @turbot_kare
-      </div>
-
-      <p>
-        Turbotと申します。
-        小謎を作ります。よろしくお願いします。
       </p>
 
     </div>
@@ -1190,13 +1223,13 @@ footer{
 
     <div class="contact-buttons">
 
-    <button class="btn btn-main">
-      公式X
-    </button>
+      <a href="https://x.com/" target="_blank" class="btn btn-main">
+        公式X
+      </a>
 
-    <button class="btn btn-main">
-      メール
-    </button>
+      <a href="mailto:example@gmail.com" class="btn btn-main">
+        メール
+      </a>
 
     </div>
 
@@ -1208,5 +1241,38 @@ footer{
   ⓒ 2026 RI:Works
 </footer>
 
+<!-- POPUP -->
+
+<div class="popup-overlay" id="popup">
+
+  <div class="popup-box">
+
+    <button class="popup-close" onclick="closePopup()">
+      ×
+    </button>
+
+    <img src="ポップアップ.png" class="popup-image">
+
+  </div>
+
+</div>
+
+<script>
+
+function openPopup(){
+
+  document
+    .getElementById("popup")
+    .classList.add("show");
+}
+
+function closePopup(){
+
+  document
+    .getElementById("popup")
+    .classList.remove("show");
+}
+
+</script>
 </body>
 </html>
