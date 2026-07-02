@@ -6,7 +6,10 @@
 
 <title>RI:Works Official</title>
 
+<link rel="icon" href="favicon.png" type="image/png">
+
 <style>
+  
 
 /* =========================
    RESET
@@ -708,114 +711,8 @@ footer{
       translateY(0px);
   }
 }
-/* =========================
-   POPUP BUTTON
-========================= */
 
-.popup-open{
 
-  color:#f0b53d;
-
-  font-size:20px;
-
-  font-weight:700;
-
-  cursor:pointer;
-
-  transition:0.3s;
-
-  line-height:1;
-}
-
-.popup-open:hover{
-
-  transform:scale(1.2);
-}
-
-/* =========================
-   POPUP
-========================= */
-
-.popup-overlay{
-
-  position:fixed;
-
-  inset:0;
-
-  background:rgba(0,0,0,0.5);
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  opacity:0;
-
-  pointer-events:none;
-
-  transition:0.3s;
-
-  z-index:5000;
-}
-
-.popup-overlay.show{
-
-  opacity:1;
-
-  pointer-events:auto;
-}
-
-.popup-box{
-
-  position:relative;
-
-  width:min(92%,720px);
-
-  border-radius:28px;
-
-  overflow:hidden;
-
-  background:white;
-
-  box-shadow:
-    0 20px 60px rgba(0,0,0,0.25);
-}
-
-.popup-image{
-
-  width:100%;
-
-  display:block;
-}
-
-.popup-close{
-
-  position:absolute;
-
-  top:14px;
-  right:14px;
-
-  width:42px;
-  height:42px;
-
-  border:none;
-
-  border-radius:50%;
-
-  background:rgba(255,255,255,0.92);
-
-  font-size:28px;
-
-  cursor:pointer;
-
-  transition:0.2s;
-}
-
-.popup-close:hover{
-
-  transform:scale(1.1);
-}
 
 /* =========================
    RESPONSIVE
@@ -899,6 +796,26 @@ footer{
   
 }
 
+.hero-logo{
+
+  width:min(700px,90%);
+
+  display:block;
+
+  margin-bottom:40px;
+}
+
+@media(max-width:900px){
+
+  .hero-logo{
+
+    width:95%;
+
+    margin-bottom:30px;
+  }
+
+}
+
 </style>
 </head>
 
@@ -926,9 +843,6 @@ footer{
     <a href="#contents">CONTENTS</a>
     <a href="#creator">CREATOR</a>
     <a href="#contact">CONTACT</a>
-    <div class="popup-open" onclick="openPopup()">
-    ★
-  </div>
   </div>
 
 </nav>
@@ -939,11 +853,7 @@ footer{
 
   <div class="hero">
 
-    <h1 class="fade-up delay1">
-      仮のサイトです！<br>
-      公開は後日！<br>
-      拡散はしないでね！
-    </h1>
+    <img src="rogo.png" class="hero-logo fade-up delay1">
 
     <p class="fade-up delay2">
 
@@ -1226,6 +1136,20 @@ footer{
 
     <div class="member-card">
 
+      <img src="tohahe.png" class="member-icon">
+
+      <h3>トハヘ</h3>
+
+      <p>
+        音楽制作をしています。<br>
+        謎は解く方が得意です。
+      </p>
+
+    </div>
+
+
+    <div class="member-card">
+
       <img src="jyuuji.png" class="member-icon">
 
       <h3>10時</h3>
@@ -1319,7 +1243,59 @@ footer{
 
     </div>
 
-    
+    <div class="member-card">
+
+      <img src="hitorigoto.png" class="member-icon">
+
+      <h3>一人言</h3>
+
+      <div class="member-role">
+        <a href="https://x.com/h1t0n1yg0t02025" target="_blank">
+          @h1t0n1yg0t02025
+        </a>
+      </div>
+
+    </div>
+
+
+    <div class="member-card">
+
+      <img src="ikkuzo-.jpeg" class="member-icon">
+
+      <h3>いっくぞー！</h3>
+
+      <div class="member-role">
+        <a href="https://x.com/ikkuzo_0921" target="_blank">
+          @ikkuzo_0921
+        </a>
+      </div>
+
+      <p>
+        棒人間謎解きクリエイターこと「いっくぞー！」と申します〜！<br>
+        普段はXなどで活動しており一枚謎やLINE謎やweb謎を制作しております〜！<br>
+        面白い謎を作るぞ！！というモットーを持って団体でも制作して参ります！よろしくお願いします！！
+      </p>
+
+    </div>
+
+    <div class="member-card">
+
+      <img src="akane.png" class="member-icon">
+
+      <h3>茜</h3>
+
+      <div class="member-role">
+        <a href="https://x.com/yaitaonikuP" target="_blank">
+          @yaitaonikuP
+        </a>
+      </div>
+
+      <p>
+        こんにちは。茜です。<br>
+        謎解き以外にも色々齧ってますが、謎解きの熱量、生業具合にはかなり自信あります。
+      </p>
+
+    </div>
 
   </div>
 
@@ -1365,21 +1341,6 @@ footer{
   ⓒ 2026 RI:Works
 </footer>
 
-<!-- POPUP -->
-
-<div class="popup-overlay" id="popup">
-
-  <div class="popup-box">
-
-    <button class="popup-close" onclick="closePopup()">
-      ×
-    </button>
-
-    <img src="popup.png" class="popup-image">
-
-  </div>
-
-</div>
 
 <script>
 
