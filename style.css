@@ -712,84 +712,6 @@ footer{
    RESPONSIVE
 ========================= */
 
-@media(max-width:900px){
-
-  .navbar{
-
-    height:auto;
-
-    padding:16px 5%;
-
-    flex-direction:column;
-
-    gap:14px;
-  }
-
-  .menu{
-
-    width:100%;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
-    gap:14px;
-  }
-
-  .menu a{
-
-    font-size:11px;
-  }
-
-  .hero h1{
-
-    font-size:38px;
-
-    line-height:1.2;
-  }
-
-  .hero p{
-
-    font-size:16px;
-  }
-
-  .pickup-grid,
-  .content-grid,
-  .member-grid{
-
-    grid-template-columns:1fr;
-  }
-
-  .pickup-body h3,
-  .content-card h3,
-  .news-item h3{
-
-    font-size:24px;
-  }
-
-  .member-card h3{
-
-    font-size:24px;
-  }
-
-  .section-title h2{
-
-    font-size:36px;
-  }
-
-  .bg-logo{
-
-    width:480px;
-
-    right:-120px;
-
-    top:60px;
-
-    opacity:0.08;
-  }
-
-}
-
 .hero-logo{
 
   width:min(700px,90%);
@@ -799,16 +721,6 @@ footer{
   margin-bottom:40px;
 }
 
-@media(max-width:900px){
-
-  .hero-logo{
-
-    width:95%;
-
-    margin-bottom:30px;
-  }
-
-}
 
 /* =========================
    SMART PHONE
