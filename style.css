@@ -811,39 +811,35 @@ footer{
 
     display:flex;
 
-    position:fixed;
+    position:absolute;
 
     top:70px;
     left:0;
-    right:0;
-    bottom:0;
+
+    width:100%;
 
     flex-direction:column;
 
-    background:rgba(255,255,255,.92);
+    background:rgba(255,255,255,.9);
     backdrop-filter:blur(20px);
 
-    overflow-y:auto;
+    overflow:hidden;
 
-    transform:translateY(-100%);
+    max-height:0;
     opacity:0;
 
-    visibility:hidden;
-    pointer-events:none;
-
     transition:
-        transform .35s ease,
-        opacity .25s ease,
-        visibility .25s;
+        max-height .35s ease,
+        opacity .25s ease;
 }
 
 .menu.show{
 
-    transform:translateY(0);
-    opacity:1;
+    max-height:calc(100vh - 70px);
 
-    visibility:visible;
-    pointer-events:auto;
+    overflow-y:auto;
+
+    opacity:1;
 }
 
 .menu a{
