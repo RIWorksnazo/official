@@ -755,20 +755,19 @@ footer{
     transition:.3s;
 }
 
-@media(max-width:900px){
 
-  .bg-logo{
+.bg-logo{
 
-    width:480px;
+    width:60vw;
+    max-width:330px;
 
-    right:-120px;
+    right:-60px;
+    top:70px;
 
-    top:60px;
-
-    opacity:0.08;
-  }
-
+    opacity:.07;
 }
+
+
 
 .hamburger.open{
 
