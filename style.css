@@ -305,7 +305,7 @@ header{
 
   justify-content:center;
 
-  gap:38px;
+  gap:20px;
 
   flex-wrap:wrap;
 }
@@ -851,8 +851,6 @@ footer{
     text-align:center;
 
     font-size:18px;
-
-    border-bottom:1px solid rgba(0,0,0,.06);
 }
 
 /* HERO */
@@ -886,19 +884,18 @@ header{
 /* ボタン */
 
 .buttons{
-
     flex-direction:column;
-
-    gap:12px;
+    align-items:center;
+    gap:20px;
 }
 
 .btn{
 
-    width:100%;
+    width:85%;
 
     text-align:center;
 
-    padding:15px;
+    padding:12px;
 }
 
 /* PICKUP */
