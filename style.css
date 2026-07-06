@@ -758,13 +758,13 @@ footer{
 
 .bg-logo{
 
-    width:60vw;
-    max-width:330px;
+    width:480px;
 
-    right:-60px;
-    top:70px;
+    right:-120px;
 
-    opacity:.07;
+    top:60px;
+
+    opacity:0.08;
 }
 
 
