@@ -263,6 +263,7 @@ function toggleMenu(){
     const button = document.querySelector(".hamburger");
 
     menu.classList.toggle("show");
+    button.classList.toggle("open");
 
     if(menu.classList.contains("show")){
         button.innerHTML = "✕";
