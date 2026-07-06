@@ -434,18 +434,6 @@ section{
   margin-bottom:24px;
 }
 
-.about-heading{
-  font-size:clamp(20px,3vw,32px);
-  color:#ea9920;
-}
-
-
-.about-read{
-  color:#2daec6; 
-  font-weight:700;
-  margin-bottom:24px;
-}
-
 /* =========================
    NEWS
 ========================= */
