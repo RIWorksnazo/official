@@ -918,6 +918,17 @@ header{
     font-size:22px;
 }
 
+/* and more... */
+
+.member-more{
+
+    font-size:20px;
+
+    margin-top:10px;
+
+    letter-spacing:0.05em;
+}
+
 /* SECTION */
 
 section{
