@@ -623,6 +623,24 @@ section{
   color:#607688;
 }
 
+.member-more{
+    grid-column:1 / -1;
+
+    text-align:center;
+
+    margin-top:20px;
+
+    font-size:28px;
+    font-style:italic;
+    font-weight:600;
+
+    color:#e5c497;
+
+    letter-spacing:0.08em;
+
+    opacity:0.8;
+}
+
 /* =========================
    CONTACT
 ========================= */
