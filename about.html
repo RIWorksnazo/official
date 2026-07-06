@@ -83,9 +83,16 @@
 
 function toggleMenu(){
 
-    document
-        .getElementById("menu")
-        .classList.toggle("show");
+    const menu = document.getElementById("menu");
+    const button = document.querySelector(".hamburger");
+
+    menu.classList.toggle("show");
+
+    if(menu.classList.contains("show")){
+        button.innerHTML = "✕";
+    }else{
+        button.innerHTML = "☰";
+    }
 
 }
 
