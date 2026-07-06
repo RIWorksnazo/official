@@ -755,6 +755,21 @@ footer{
     transition:.3s;
 }
 
+@media(max-width:900px){
+
+  .bg-logo{
+
+    width:480px;
+
+    right:-120px;
+
+    top:60px;
+
+    opacity:0.08;
+  }
+
+}
+
 .hamburger.open{
 
     transform:rotate(90deg);
