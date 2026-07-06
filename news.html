@@ -29,14 +29,19 @@
     <img src="rogo.png" class="logo-text">
   </div>
 
-  <div class="menu">
-  <a href="index.html">TOP</a>
-  <a href="about.html">ABOUT</a>
-  <a href="news.html">NEWS</a>
-  <a href="contents.html">CONTENTS</a>
-  <a href="creator.html">CREATOR</a>
-  <a href="contact.html">CONTACT</a>
-</div>
+  <!-- ハンバーガー -->
+  <div class="hamburger" onclick="toggleMenu()">
+    ☰
+  </div>
+
+  <div class="menu" id="menu">
+    <a href="index.html">TOP</a>
+    <a href="about.html">ABOUT</a>
+    <a href="news.html">NEWS</a>
+    <a href="contents.html">CONTENTS</a>
+    <a href="creator.html">CREATOR</a>
+    <a href="contact.html">CONTACT</a>
+  </div>
 
 </nav>
 
@@ -75,6 +80,17 @@
   ⓒ 2026 RI:Works
 </footer>
 
+<script>
+
+function toggleMenu(){
+
+    document
+        .getElementById("menu")
+        .classList.toggle("show");
+
+}
+
+</script>
 
 </body>
 </html>

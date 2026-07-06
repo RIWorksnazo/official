@@ -809,3 +809,244 @@ footer{
   }
 
 }
+
+/* =========================
+   SMART PHONE
+========================= */
+
+.hamburger{
+    display:none;
+}
+
+@media (max-width:900px){
+
+/* ナビ */
+
+.navbar{
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+
+    height:70px;
+
+    padding:0 20px;
+}
+
+.logo-text{
+    width:120px;
+}
+
+.logo-icon{
+    width:36px;
+}
+
+.hamburger{
+    display:block;
+
+    font-size:34px;
+    cursor:pointer;
+}
+
+/* メニュー */
+
+.menu{
+
+    display:none;
+
+    position:absolute;
+
+    top:70px;
+    left:0;
+
+    width:100%;
+
+    background:white;
+
+    flex-direction:column;
+
+    gap:0;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
+
+.menu.show{
+    display:flex;
+}
+
+.menu a{
+
+    width:100%;
+
+    padding:16px;
+
+    text-align:center;
+
+    font-size:15px;
+}
+
+/* HERO */
+
+header{
+
+    padding:100px 6% 40px;
+
+    min-height:auto;
+}
+
+.hero{
+
+    max-width:100%;
+}
+
+.hero-logo{
+
+    width:90%;
+
+    margin:0 auto 25px;
+}
+
+.hero p{
+
+    font-size:15px;
+
+    margin-bottom:28px;
+}
+
+/* ボタン */
+
+.buttons{
+
+    flex-direction:column;
+
+    gap:12px;
+}
+
+.btn{
+
+    width:100%;
+
+    text-align:center;
+
+    padding:15px;
+}
+
+/* PICKUP */
+
+.pickup-grid{
+
+    margin-top:40px;
+
+    gap:20px;
+}
+
+.pickup-image{
+
+    height:170px;
+}
+
+.pickup-body{
+
+    padding:20px;
+}
+
+.pickup-body h3{
+
+    font-size:22px;
+}
+
+/* SECTION */
+
+section{
+
+    padding:90px 6% 70px;
+
+    min-height:auto;
+}
+
+.section-title{
+
+    margin-bottom:35px;
+}
+
+.section-title h2{
+
+    font-size:30px;
+}
+
+/* ABOUT */
+
+.about-box{
+
+    padding:25px;
+}
+
+.about-heading{
+
+    font-size:22px;
+}
+
+.about-box p{
+
+    font-size:15px;
+}
+
+/* NEWS */
+
+.news-item{
+
+    padding:22px;
+}
+
+.news-item h3{
+
+    font-size:22px;
+}
+
+/* CONTENT */
+
+.content-body{
+
+    padding:22px;
+}
+
+.content-card h3{
+
+    font-size:22px;
+}
+
+/* CREATOR */
+
+.member-card{
+
+    padding:24px;
+}
+
+.member-icon{
+
+    width:90px;
+    height:90px;
+}
+
+.member-card h3{
+
+    font-size:22px;
+}
+
+.member-card p{
+
+    font-size:15px;
+}
+
+/* CONTACT */
+
+.contact-box{
+
+    padding:35px 20px;
+}
+
+.contact-box p{
+
+    font-size:15px;
+}
+
+}
