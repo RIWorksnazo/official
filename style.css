@@ -811,7 +811,7 @@ footer{
 
     display:flex;
 
-    position:absolute;
+    position:fixed; 
 
     top:70px;
     left:0;
@@ -832,6 +832,20 @@ footer{
         max-height .35s ease,
         opacity .25s ease;
 }
+
+#menuOverlay{
+    position:fixed;
+    top:70px;
+    left:0;
+
+    width:100%;
+    height:calc(100vh - 70px);
+
+    display:none;
+
+    z-index:999;
+}
+
 
 .menu.show{
 
@@ -1205,4 +1219,8 @@ section{
 
 .logo:active{
   transform:scale(.97);
+}
+
+body.menu-open{
+    overflow:hidden;
 }
