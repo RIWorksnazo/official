@@ -24,10 +24,10 @@
 
 <nav class="navbar">
 
-  <div class="logo">
+  <a href="index.html" class="logo">
     <img src="risu.png" class="logo-icon">
     <img src="rogo.png" class="logo-text">
-  </div>
+  </a>
 
   <!-- ハンバーガー -->
   <div class="hamburger" onclick="toggleMenu()">
@@ -36,7 +36,6 @@
 
   <div class="menu" id="menu">
     <a href="index.html">TOP</a>
-    <a href="about.html">ABOUT</a>
     <a href="news.html">NEWS</a>
     <a href="contents.html">CONTENTS</a>
     <a href="creator.html">CREATOR</a>
@@ -47,6 +46,54 @@
 
 
 <!-- CONTENTS -->
+<div id="modal" class="modal">
+
+  <div class="modal-box">
+
+    <span class="close" onclick="closeModal()">×</span>
+
+    <img id="modalImage" class="modal-image">
+
+    <h2 id="modalTitle"></h2>
+
+    <p id="modalCatch"></p>
+
+    <a id="modalHashtag"
+       target="_blank"
+       class="modal-hashtag">
+    </a>
+
+    <table class="modal-table">
+
+      <tr>
+        <th>所要時間</th>
+        <td id="modalTime"></td>
+      </tr>
+
+      <tr>
+        <th>料金</th>
+        <td id="modalPrice"></td>
+      </tr>
+
+      <tr>
+        <th>公演形式</th>
+        <td id="modalType"></td>
+      </tr>
+
+      <tr>
+        <th>参加人数</th>
+        <td id="modalPeople"></td>
+      </tr>
+
+    </table>
+
+    <h3>過去公演</h3>
+
+    <div id="modalHistory"></div>
+
+  </div>
+
+</div>
 
 <section id="contents">
 
@@ -56,95 +103,145 @@
 
   <div class="content-grid">
 
-    <div class="content-card">
+    <!-- コンテンツ -->
 
+    <div class="content-card"
+    onclick="openModal(
+      'kyoukaisen.png',
+      '鏡の国の鏡界戦',
+      '鏡界戦脱出',
+      '鏡裏の住人と協力して、気まぐれテカ神からの試練を突破せよ！',
+      '50分',
+      '2000円',
+      'ルーム型',
+      '4人',
+      '2025 3/15,16 謎キャン2025 \n 2026 3/7 九州学生謎解きフェス \n 2026 5/30 合同再演会(大阪)')">
+            
       <img src="kyoukaisen.png" class="content-image">
 
       <div class="content-body">
-
-        <h3>
-          鏡の国の鏡界戦
-        </h3>
-
-        <p>
-          公演形式:ルーム型
-        </p>
-
+        <h3>鏡の国の鏡界戦</h3>
       </div>
 
     </div>
 
-    <div class="content-card">
-
+    <div class="content-card"
+    onclick="openModal(
+      'itazuraobake.png',
+      'おばけにいたずらされた謎解き公演からの脱出',
+      'イタズラおばけ脱出',
+      'ひょんなことからおばけたちが大脱走！？イタズラを仕掛けたり、部屋のあちこちに隠れたりと大はしゃぎ！あなたのひらめきで、このドタバタ公演を無事に乗り越えろ！',
+      '70分',
+      '2500円',
+      'ルーム型',
+      '4人',
+      '2025 7/20,21 大阪最宴祭12')">
+            
       <img src="itazuraobake.png" class="content-image">
 
       <div class="content-body">
-
-        <h3>
-          おばけにいたずらされた謎解き公演からの脱出
-        </h3>
-
-        <p>
-          公演形式:ルーム型
-        </p>
-
+        <h3>おばけにいたずらされた謎解き公演からの脱出</h3>
       </div>
 
     </div>
 
-    <div class="content-card">
-
+    <div class="content-card"
+    onclick="openModal(
+      'burakkusanta.png',
+      'ブラックサンタからの退職',
+      '黒サンタ退職',
+      '襲いかかる妨害を乗り越え、すべての子どもにプレゼントを届けろ！',
+      '80分',
+      '2500円',
+      'ルーム型',
+      '4人',
+      '2025 12/20,21 東京最宴祭2 \n 2025 12/28 浪速区民センター(大阪)\n 2026 1/31,2/01 なぞねこ(名古屋)'
+      )">
+            
       <img src="burakkusanta.png" class="content-image">
 
       <div class="content-body">
-
-        <h3>
-          ブラックサンタからの退職
-        </h3>
-
-        <p>
-          公演形式:ルーム型
-        </p>
-
+        <h3>ブラックサンタからの退職</h3>
       </div>
 
     </div>
 
-    <div class="content-card">
-
+    <div class="content-card"
+    onclick="openModal(
+      'poisute.png',
+      'ポイすてっ！',
+      'ポイすて謎',
+      '解いて！ 分別！ ポイっと捨てろ！',
+      '25分',
+      '1500円',
+      'ブース型',
+      '1~2人',
+      '2025 12/21 東京最宴祭2 \n 2026 3/14,15 謎キャン2026 \n 2026 1/31,2/01 なぞねこ(名古屋)'
+      )">
+            
       <img src="poisute.png" class="content-image">
 
       <div class="content-body">
-
-        <h3>
-          ポイすてっ！
-        </h3>
-
-        <p>
-          公演形式:ブース型
-        </p>
-
+        <h3>ポイすてっ！</h3>
       </div>
 
     </div>
 
-    <div class="content-card">
-
+    <div class="content-card"
+    onclick="openModal(
+      'kotaekakoe.png',
+      'Kotae Kakoe',
+      'コタエカコエ',
+      '謎の答えを「囲って」答えるタイムアタックです！',
+      '20分',
+      '1000円',
+      'ブース型',
+      '1~2人',
+      '2026 3/7 九州学生謎解きフェス'
+      )">
+            
       <img src="kotaekakoe.png" class="content-image">
 
       <div class="content-body">
-
-        <h3>
-          Kotae Kakoe
-        </h3>
-
-        <p>
-          公演形式:ブース型
-        </p>
-
+        <h3>Kotae Kakoe</h3>
       </div>
 
     </div>
+
+    <div class="content-card"
+    onclick="openModal(
+      'ibutu.png',
+      '異物混入',
+      '異物混入謎',
+      '【異物混入】いぶつ-こんにゅう 食品や製品に本来含まれるべきではないものが混ざってしまうこと。この公演においては招かれざる客のことを指す。',
+      '45分',
+      '2000円',
+      'ルーム型',
+      '4人',
+      '2026/3/14,15 謎キャン2026 \n 2026 6/21 大阪最宴祭15'
+      )">
+            
+      <img src="ibutu.png" class="content-image">
+
+      <div class="content-body">
+        <h3>異物混入</h3>
+      </div>
+
+    </div>
+    
+
+
+  </div>
+
+</section>
+
+
+
+<!--ここから旧
+
+  <div class="content-grid">
+
+
 
     <div class="content-card">
 
@@ -167,6 +264,9 @@
   </div>
 
 </section>
+
+ここまで旧
+-->
 
 
 <footer>
@@ -191,7 +291,60 @@ function toggleMenu(){
 
 }
 
+
+// 背景クリックで閉じる
+document.getElementById("modal").addEventListener("click",function(e){
+
+    if(e.target===this){
+        closeModal();
+    }
+
+});
+
+function openModal(
+image,
+title,
+hashtag,
+catchcopy,
+time,
+price,
+type,
+people,
+history
+){
+
+    document.getElementById("modalImage").src = image;
+
+    document.getElementById("modalTitle").textContent = title;
+
+    document.getElementById("modalHashtag").textContent = "#" + hashtag;
+
+    document.getElementById("modalHashtag").href =
+        "https://x.com/search?q=%23" + encodeURIComponent(hashtag);
+
+    document.getElementById("modalCatch").textContent = catchcopy;
+
+    document.getElementById("modalTime").textContent = time;
+
+    document.getElementById("modalPrice").textContent = price;
+
+    document.getElementById("modalType").textContent = type;
+
+    document.getElementById("modalPeople").textContent = people;
+
+    document.getElementById("modalHistory").innerHTML =
+        history.replace(/\n/g,"<br>");
+
+    document.getElementById("modal").classList.add("show");
+}
+
+function closeModal(){
+    document.getElementById("modal").classList.remove("show");
+}
+
 </script>
+
+
 
 </body>
 </html>
