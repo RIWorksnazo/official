@@ -1029,3 +1029,180 @@ section{
 }
 
 }
+
+/* ===== モーダル ===== */
+
+.modal{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:5000;
+
+}
+
+.modal.show{
+
+    opacity:1;
+    visibility:visible;
+
+}
+
+.modal-box{
+
+    width:min(520px,85%);
+
+    max-height:80vh;
+
+    overflow-y:auto;
+
+    background:rgba(255,255,255,.85);
+
+    backdrop-filter:blur(25px);
+
+    border-radius:30px;
+
+    padding:28px;
+
+    position:relative;
+}
+
+.modal-box img{
+
+    width:100%;
+
+    border-radius:20px;
+
+    margin-bottom:25px;
+
+}
+
+.modal-box h2{
+
+    font-size:34px;
+
+    margin-bottom:10px;
+
+}
+
+.modal-box h4{
+
+    color:#2daec6;
+
+    margin-bottom:20px;
+
+}
+
+.modal-box p{
+
+    color:#607688;
+
+    line-height:1.9;
+
+}
+
+.close{
+    position:absolute;
+    top:18px;
+    right:18px;
+
+    width:48px;
+    height:48px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:34px;
+    font-weight:700;
+
+    color:#18354a;
+
+    background:rgba(255,255,255,.92);
+    border-radius:50%;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.close:hover{
+    transform:scale(1.08);
+    background:white;
+}
+
+.modal-history{
+
+    white-space:pre-line;
+
+    line-height:2;
+
+}
+
+.modal-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:25px 0;
+}
+
+.modal-table th{
+    width:120px;
+    text-align:left;
+    vertical-align:top;
+    padding:8px 0;
+    color:#dfa92a;
+}
+
+.modal-table td{
+    padding:8px 0;
+    color:#222222;
+}
+
+.modal-hashtag{
+    display:inline-block;
+    margin:10px 0 18px;
+
+    color:#2daec6;
+    font-weight:700;
+    font-size:20px;
+
+    text-decoration:none;
+}
+
+.modal-hashtag:hover{
+    text-decoration:underline;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:14px;
+
+  text-decoration:none;
+  color:inherit;
+}
+
+.logo{
+  transition:.2s;
+}
+
+.logo:hover{
+  opacity:.85;
+}
+
+.logo:active{
+  transform:scale(.97);
+}
