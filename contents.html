@@ -361,19 +361,28 @@ document.addEventListener("touchmove", (e) => {
     touchX = e.touches[0].clientX;
     touchY = e.touches[0].clientY;
 
+    const element = document.elementFromPoint(touchX, touchY);
+    const card = element?.closest(".content-card");
+
+    if (card !== currentCard) {
+
+        if (currentCard) {
+            currentCard.classList.remove("touching");
+        }
+
+        if (card) {
+            card.classList.add("touching");
+        }
+
+        currentCard = card;
+    }
+
 }, { passive: true });
 
 let touching = false;
 
-document.addEventListener("touchstart", (e) => {
-
+document.addEventListener("touchstart", () => {
     touching = true;
-
-    touchX = e.touches[0].clientX;
-    touchY = e.touches[0].clientY;
-
-    requestAnimationFrame(updateTouchCard);
-
 }, { passive:true });
 
 document.addEventListener("touchend", () => {
@@ -396,29 +405,7 @@ document.addEventListener("touchcancel", () => {
 
 });
 
-function updateTouchCard(){
 
-    if(!touching) return;
-
-    const element = document.elementFromPoint(touchX, touchY);
-
-    const card = element?.closest(".content-card");
-
-    if(card !== currentCard){
-
-        if(currentCard){
-            currentCard.classList.remove("touching");
-        }
-
-        if(card){
-            card.classList.add("touching");
-        }
-
-        currentCard = card;
-    }
-
-    requestAnimationFrame(updateTouchCard);
-}
 
 </script>
 
