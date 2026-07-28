@@ -499,6 +499,8 @@ section{
 
 .content-card{
 
+  position:relative;
+
   overflow:hidden;
 
   border-radius:34px;
@@ -506,11 +508,63 @@ section{
   transition:0.35s;
 }
 
+.content-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    border:3.7px solid rgba(120, 225, 243, 0.901);
+
+    border-radius:32px;
+
+    opacity:0;
+    transition:.25s;
+
+    pointer-events:none;
+}
+
+.content-card:hover::after{
+    opacity:1;
+}
+
 .content-card:hover{
 
   transform:
     translateY(-10px)
     scale(1.015);
+}
+
+.content-card::before{
+    content:"タップで詳細";
+    position:absolute;
+
+    right:16px;
+    bottom:16px;
+
+    color:#2daec6;
+
+    padding:6px 12px;
+    border-radius:999px;
+
+    font-size:13px;
+    font-weight:700;
+
+    opacity:0;
+    transition:.2s;
+
+    pointer-events:none;
+}
+
+.content-card:hover::before{
+    opacity:1;
+}
+
+.content-card.touching::before{
+    opacity:1;
+}
+
+.content-card.active::before{
+    opacity:0;
 }
 
 .content-image{
@@ -741,7 +795,7 @@ footer{
 
 
 /* =========================
-   SMART PHONE
+   SMART PHONE  スマホ
 ========================= */
 
 .hamburger{
@@ -1007,6 +1061,14 @@ section{
 .content-card h3{
 
     font-size:22px;
+}
+
+.content-card.active::after{
+    opacity:1;
+}
+
+.content-card:active::before{
+    opacity:1;
 }
 
 /* CREATOR */
