@@ -350,6 +350,42 @@ function closeModal(){
 const cards = document.querySelectorAll(".content-card");
 
 
+let currentCard = null;
+
+document.addEventListener("touchmove", (e) => {
+
+    const touch = e.touches[0];
+
+    const element = document.elementFromPoint(
+        touch.clientX,
+        touch.clientY
+    );
+
+    const card = element?.closest(".content-card");
+
+    if (currentCard !== card) {
+
+        cards.forEach(c => c.classList.remove("touching"));
+
+        if (card) {
+            card.classList.add("touching");
+        }
+
+        currentCard = card;
+    }
+
+}, { passive: true });
+
+document.addEventListener("touchend", () => {
+    cards.forEach(c => c.classList.remove("touching"));
+    currentCard = null;
+});
+
+document.addEventListener("touchcancel", () => {
+    cards.forEach(c => c.classList.remove("touching"));
+    currentCard = null;
+});
+
 </script>
 
 
