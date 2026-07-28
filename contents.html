@@ -352,39 +352,73 @@ const cards = document.querySelectorAll(".content-card");
 
 let currentCard = null;
 
+
+let touchX = 0;
+let touchY = 0;
+
 document.addEventListener("touchmove", (e) => {
 
-    const touch = e.touches[0];
+    touchX = e.touches[0].clientX;
+    touchY = e.touches[0].clientY;
 
-    const element = document.elementFromPoint(
-        touch.clientX,
-        touch.clientY
-    );
+}, { passive: true });
+
+let touching = false;
+
+document.addEventListener("touchstart", (e) => {
+
+    touching = true;
+
+    touchX = e.touches[0].clientX;
+    touchY = e.touches[0].clientY;
+
+    requestAnimationFrame(updateTouchCard);
+
+}, { passive:true });
+
+document.addEventListener("touchend", () => {
+
+    touching = false;
+
+    cards.forEach(c => c.classList.remove("touching"));
+
+    currentCard = null;
+
+});
+
+document.addEventListener("touchcancel", () => {
+
+    touching = false;
+
+    cards.forEach(c => c.classList.remove("touching"));
+
+    currentCard = null;
+
+});
+
+function updateTouchCard(){
+
+    if(!touching) return;
+
+    const element = document.elementFromPoint(touchX, touchY);
 
     const card = element?.closest(".content-card");
 
-    if (currentCard !== card) {
+    if(card !== currentCard){
 
-        cards.forEach(c => c.classList.remove("touching"));
+        if(currentCard){
+            currentCard.classList.remove("touching");
+        }
 
-        if (card) {
+        if(card){
             card.classList.add("touching");
         }
 
         currentCard = card;
     }
 
-}, { passive: true });
-
-document.addEventListener("touchend", () => {
-    cards.forEach(c => c.classList.remove("touching"));
-    currentCard = null;
-});
-
-document.addEventListener("touchcancel", () => {
-    cards.forEach(c => c.classList.remove("touching"));
-    currentCard = null;
-});
+    requestAnimationFrame(updateTouchCard);
+}
 
 </script>
 
