@@ -108,7 +108,7 @@
     <!-- コンテンツ -->
 
     <div class="content-card"
-    onclick="openModal(
+    onclick="openModal(event,
       'kyoukaisen.png',
       '鏡の国の鏡界戦',
       '鏡界戦脱出',
@@ -128,7 +128,7 @@
     </div>
 
     <div class="content-card"
-    onclick="openModal(
+    onclick="openModal(event,
       'itazuraobake.png',
       'おばけにいたずらされた謎解き公演からの脱出',
       'イタズラおばけ脱出',
@@ -148,7 +148,7 @@
     </div>
 
     <div class="content-card"
-    onclick="openModal(
+    onclick="openModal(event,
       'burakkusanta.png',
       'ブラックサンタからの退職',
       '黒サンタ退職',
@@ -169,7 +169,7 @@
     </div>
 
     <div class="content-card"
-    onclick="openModal(
+    onclick="openModal(event,
       'poisute.png',
       'ポイすてっ！',
       'ポイすて謎',
@@ -190,7 +190,7 @@
     </div>
 
     <div class="content-card"
-    onclick="openModal(
+    onclick="openModal(event,
       'kotaekakoe.png',
       'Kotae Kakoe',
       'コタエカコエ',
@@ -211,7 +211,7 @@
     </div>
 
     <div class="content-card"
-    onclick="openModal(
+    onclick="openModal(event,
       'ibutu.png',
       '異物混入',
       '異物混入謎',
@@ -232,7 +232,7 @@
     </div>
 
     <div class="content-card"
-    onclick="openModal(
+    onclick="openModal(event,
       'mikansei.webp',
       '未完成の脱出ゲームからの脱出',
       '未完成脱出',
@@ -295,6 +295,7 @@ document.getElementById("modal").addEventListener("click",function(e){
 });
 
 function openModal(
+event,
 image,
 title,
 hashtag,
@@ -305,6 +306,10 @@ type,
 people,
 history
 ){
+
+    cards.forEach(c=>c.classList.remove("active"));
+  
+    event.currentTarget.classList.add("active");
 
     document.getElementById("modalImage").src = image;
 
@@ -335,10 +340,15 @@ function closeModal(){
 
     document.getElementById("modal").classList.remove("show");
 
+    cards.forEach(c => c.classList.remove("active"));
+
     setTimeout(() => {
         document.querySelector(".modal-box").scrollTop = 0;
     }, 300);
 }
+
+const cards = document.querySelectorAll(".content-card");
+
 
 </script>
 
