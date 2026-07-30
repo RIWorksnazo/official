@@ -597,6 +597,49 @@ section{
   color:#607688;
 }
 
+.filter-buttons{
+
+    display:flex;
+    justify-content:center;
+    gap:16px;
+
+    margin-bottom:50px;
+
+    flex-wrap:wrap;
+}
+
+.filter-buttons button{
+
+    padding:10px 26px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:#edf4f7;
+
+    color:#607688;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.filter-buttons button.active{
+
+    background:#2daec6;
+
+    color:white;
+}
+
+.filter-buttons button:hover{
+
+    background:#5fd6ea;
+    color:white;
+}
+
 /* =========================
    CREATOR
 ========================= */
