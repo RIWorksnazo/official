@@ -1,4 +1,42 @@
+/* =========================
+   IMAGE
+========================= */
 
+.image-kyoukaisen{
+    object-position:50% 4%;
+}
+
+.image-nazouo{
+    object-position:50% 14%;
+}
+
+.image-noroi{
+    object-position:50% 16%;
+}
+
+.image-burakkusanta{
+    object-position:50% 92%;
+}
+
+.image-poisute{
+    object-position:50% 8%;
+}
+
+.image-ibutu{
+    object-position:50% 86%;
+}
+
+.image-tenkyo{
+    object-position:50% 10%;
+}
+
+.image-mikansei{
+    object-position:50% 77.5%;
+}
+
+.image-kotaekakoe{
+    object-position:50% 47%;
+}
 
 /* =========================
    RESET
