@@ -6,7 +6,7 @@
 
 <title>RI:Works Official</title>
 
-<link rel="icon" href="favicon.png" type="image/png">
+<link rel="icon" href="favicon.png">
 
 <link rel="stylesheet" href="style.css">
 
@@ -77,19 +77,24 @@
         <td id="modalPrice"></td>
       </tr>
 
-      <tr>
-        <th>公演形式</th>
+      <tr id="TypeRow">
+        <th>形式</th>
         <td id="modalType"></td>
       </tr>
 
-      <tr>
+      <tr id="TypeLabelRow">
+        <th>公演形式</th>
+        <td id="modalTypeLabel"></td>
+      </tr>
+
+      <tr id="peopleRow">
         <th>参加人数</th>
         <td id="modalPeople"></td>
       </tr>
 
     </table>
 
-    <h3>過去公演</h3>
+    <h3 id="historyTitle">過去公演</h3>
 
     <div id="modalHistory"></div>
 
@@ -103,11 +108,26 @@
     <h2>CONTENTS</h2>
   </div>
 
+  <div class="filter-buttons">
+
+    <button class="active" onclick="filterContents('all')">
+        全て
+    </button>
+
+    <button onclick="filterContents('event')">
+        公演型
+    </button>
+
+    <button onclick="filterContents('kit')">
+        キット型
+    </button>
+  </div>
+
   <div class="content-grid">
 
     <!-- コンテンツ -->
 
-    <div class="content-card"
+    <div class="content-card event"
     onclick="openModal(event,
       'kyoukaisen.png',
       '鏡の国の鏡界戦',
@@ -115,6 +135,7 @@
       '鏡裏の住人と協力して、気まぐれテカ神からの試練を突破せよ！',
       '50分',
       '2000円',
+      '',
       'ルーム型',
       '4人',
       '2025 3/15,16 謎キャン2025 \n 2026 3/7 九州学生謎解きフェス \n 2026 5/30 合同再演会(大阪)')">
@@ -127,7 +148,73 @@
 
     </div>
 
-    <div class="content-card"
+    <div class="content-card kit"
+    onclick="openModal(event,
+      'nazouo.png',
+      '新種発見!?謎魚!',
+      'ナゾウオ発見',
+      '最近、うおったーで話題となっている、通称「謎魚」。その名の通り、謎に包まれている新種の魚だ。今日はそれの調査に来ていたのだが...?',
+      '30分〜1時間',
+      '1000円',
+      'カフェ型',
+      '',
+      '1〜2人',
+      '2025 3/15,16 謎キャン2025 \n 2026 3/14,15 謎キャン2026'
+      )">
+            
+      <img src="nazouo.png" class="content-image">
+
+      <div class="content-body">
+        <h3>新種発見!?謎魚!</h3>
+      </div>
+
+    </div>
+
+    <div class="content-card kit"
+    onclick="openModal(event,
+      'noroi.png',
+      '呪いの宝石なわけないよ',
+      'ノロワレテナイヨ',
+      '謎解き運が上がる宝石売ってます〜、え？怪しい？そんなそんな！この宝石が、悪霊が取り憑いてる呪いの宝石なわけないじゃないですか〜！',
+      '〜30分',
+      '600円/人',
+      'カフェ型',
+      '',
+      '1〜4人',
+      '2025 3/15,16 謎キャン2025 \n 2026 3/14,15 謎キャン2026'
+      )">
+            
+      <img src="noroi.png" class="content-image">
+
+      <div class="content-body">
+        <h3>呪いの宝石なわけないよ</h3>
+      </div>
+
+    </div>
+
+    <div class="content-card kit"
+    onclick="openModal(event,
+      'tyuuijikou.png',
+      '注意事項が多い謎解きゲームからの脱出',
+      '注意事項謎',
+      'とある謎解き公演に参加することになったあなた。そこで見たものは、これでもかと設定された注意事項！摩訶不思議な注意事項を掻い潜り、脱出成功を目指せ！',
+      '30分〜',
+      '700円',
+      '持ち帰り型',
+      '',
+      '',
+      ''
+      )">
+            
+      <img src="tyuuijikou.png" class="content-image">
+
+      <div class="content-body">
+        <h3>注意事項が多い謎解きゲームからの脱出</h3>
+      </div>
+
+    </div>
+
+    <div class="content-card event"
     onclick="openModal(event,
       'itazuraobake.png',
       'おばけにいたずらされた謎解き公演からの脱出',
@@ -135,6 +222,7 @@
       'ひょんなことからおばけたちが大脱走！？イタズラを仕掛けたり、部屋のあちこちに隠れたりと大はしゃぎ！あなたのひらめきで、このドタバタ公演を無事に乗り越えろ！',
       '70分',
       '2500円',
+      '',
       'ルーム型',
       '4人',
       '2025 7/20,21 大阪最宴祭12')">
@@ -147,7 +235,7 @@
 
     </div>
 
-    <div class="content-card"
+    <div class="content-card event"
     onclick="openModal(event,
       'burakkusanta.png',
       'ブラックサンタからの退職',
@@ -155,6 +243,7 @@
       '襲いかかる妨害を乗り越え、すべての子どもにプレゼントを届けろ！',
       '80分',
       '2500円',
+      '',
       'ルーム型',
       '4人',
       '2025 12/20,21 東京最宴祭2 \n 2025 12/28 浪速区民センター(大阪)\n 2026 1/31,2/01 なぞねこ(名古屋)'
@@ -168,7 +257,7 @@
 
     </div>
 
-    <div class="content-card"
+    <div class="content-card event"
     onclick="openModal(event,
       'poisute.png',
       'ポイすてっ！',
@@ -176,6 +265,7 @@
       '解いて！ 分別！ ポイっと捨てろ！',
       '25分',
       '1500円',
+      '',
       'ブース型',
       '1~2人',
       '2025 12/21 東京最宴祭2 \n 2026 1/31,2/01 なぞねこ(名古屋) \n 2026 3/14,15 謎キャン2026 '
@@ -189,7 +279,7 @@
 
     </div>
 
-    <div class="content-card"
+    <div class="content-card event"
     onclick="openModal(event,
       'kotaekakoe.png',
       'Kotae Kakoe',
@@ -197,6 +287,7 @@
       '謎の答えを「囲って」答えるタイムアタックです！',
       '20分',
       '1000円',
+      '',
       'ブース型',
       '1~2人',
       '2026 3/7 九州学生謎解きフェス'
@@ -210,7 +301,7 @@
 
     </div>
 
-    <div class="content-card"
+    <div class="content-card event"
     onclick="openModal(event,
       'ibutu.png',
       '異物混入',
@@ -218,6 +309,7 @@
       '【異物混入】いぶつ-こんにゅう 食品や製品に本来含まれるべきではないものが混ざってしまうこと。この公演においては招かれざる客のことを指す。',
       '45分',
       '2000円',
+      '',
       'ルーム型',
       '4人',
       '2026 3/14,15 謎キャン2026 \n 2026 6/21 大阪最宴祭15'
@@ -231,7 +323,29 @@
 
     </div>
 
-    <div class="content-card"
+    <div class="content-card kit"
+    onclick="openModal(event,
+      'tenkyo.png',
+      '天気ョ',
+      '天気ョ',
+      'ある朝、家のポストに届いていたのは、天気の調査のお願い…？あなたは、興味本位で協力してみることにした。',
+      '40分〜',
+      '600円',
+      '持ち帰り型',
+      '',
+      '',
+      ''
+      )">
+            
+      <img src="tenkyo.png" class="content-image">
+
+      <div class="content-body">
+        <h3>天気ョ</h3>
+      </div>
+
+    </div>
+
+    <div class="content-card event"
     onclick="openModal(event,
       'mikansei.webp',
       '未完成の脱出ゲームからの脱出',
@@ -239,6 +353,7 @@
       '来週末に公演を控えた、制作団体『リスクワークス』 なのに肝心の中身はほとんど空っぽ！？なんとか公演を完成させて、トラブルなしで開催せよ！',
       '100分',
       '2500円',
+      '',
       'ホール型',
       '1チーム4人',
       '2026 4/4,5 高校生ホール型フェス'
@@ -304,6 +419,7 @@ catchcopy,
 time,
 price,
 type,
+typeLabel,
 people,
 history
 ){
@@ -329,10 +445,23 @@ history
 
     document.getElementById("modalType").textContent = type;
 
+    document.getElementById("modalTypeLabel").textContent = typeLabel;
+
     document.getElementById("modalPeople").textContent = people;
 
     document.getElementById("modalHistory").innerHTML =
         history.replace(/\n/g,"<br>");
+
+    const peopleRow = document.getElementById("peopleRow");
+    const historyTitle = document.getElementById("historyTitle");
+    const historyDiv = document.getElementById("modalHistory");
+    const typeLabelRow = document.getElementById("TypeLabelRow");
+    const typeRow = document.getElementById("TypeRow");
+    peopleRow.style.display = people ? "" : "none";
+    historyTitle.style.display = history ? "" : "none";
+    historyDiv.style.display = history ? "" : "none";
+    typeLabelRow.style.display = typeLabel ? "" : "none";
+    typeRow.style.display = type ? "" : "none";
 
     document.getElementById("modal").classList.add("show");
 }
@@ -406,6 +535,34 @@ document.addEventListener("touchcancel", () => {
 
 });
 
+
+function filterContents(type){
+
+    const cards = document.querySelectorAll(".content-card");
+
+    cards.forEach(card=>{
+
+        if(type==="all"){
+            card.style.display="";
+        }
+
+        else if(card.classList.contains(type)){
+            card.style.display="";
+        }
+
+        else{
+            card.style.display="none";
+        }
+
+    });
+
+    document
+        .querySelectorAll(".filter-buttons button")
+        .forEach(btn=>btn.classList.remove("active"));
+
+    event.currentTarget.classList.add("active");
+
+}
 
 
 </script>
