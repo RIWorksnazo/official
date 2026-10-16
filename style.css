@@ -235,7 +235,8 @@ header{
 }
 
 .hero{
-  max-width:760px;
+  width: 100%;
+  max-width: none;
 }
 
 .hero h1{
@@ -1065,7 +1066,7 @@ header{
 
 .pickup-image{
 
-    height:170px;
+    height:100px;
 }
 
 .pickup-body{
@@ -1369,4 +1370,137 @@ section{
 
 body.menu-open{
     overflow:hidden;
+}
+
+
+/* PICKUP 横スクロール */
+.pickup-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 10px 4px 20px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* カードの幅を固定 */
+.pickup-grid .pickup-card {
+  flex: 0 0 300px;
+  min-width: 0;
+  scroll-snap-align: start;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* スクロールバー */
+.pickup-grid::-webkit-scrollbar {
+  height: 6px;
+}
+
+.pickup-grid::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 10px;
+}
+
+.pickup-grid::-webkit-scrollbar-track {
+  background: #eee;
+  border-radius: 10px;
+}
+
+/* スマートフォン */
+@media (max-width: 600px) {
+  .pickup-grid {
+    gap: 14px;
+  }
+
+  .pickup-grid .pickup-card {
+    flex-basis: 80%;
+  }
+}
+
+
+/* PICKUPの表示領域を確保 */
+.pickup-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  box-sizing: border-box;
+  align-items: stretch;
+  padding: 10px 4px 24px;
+}
+
+/* カードが縦に潰れないようにする */
+.pickup-grid .pickup-card {
+  flex: 0 0 300px;
+  height: auto;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+/* カード内の文章を表示する */
+.pickup-grid .pickup-body {
+  height: auto;
+  overflow: visible;
+}
+
+@media (max-width: 600px) {
+  .pickup-grid .pickup-card {
+    flex-basis: 80%;
+  }
+}
+s
+/* カードの幅 */
+.pickup-grid .pickup-card {
+  flex: 0 0 320px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .pickup-grid {
+    gap: 14px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .pickup-grid .pickup-card {
+    flex-basis: 85%;
+  }
+}
+
+/* PICKUP 横スクロール */
+.pickup-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  gap: 20px;
+  margin-top: 40px;
+  padding: 10px 4px 24px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pickup-grid .pickup-card {
+  flex: 0 0 320px;
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+@media (max-width: 900px) {
+  .pickup-grid {
+    gap: 14px;
+  }
+
+  .pickup-grid .pickup-card {
+    flex-basis: 85%;
+  }
 }
